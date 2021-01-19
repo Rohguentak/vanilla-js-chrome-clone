@@ -1,0 +1,22 @@
+.js-clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.js-title {
+  font-size: 100;
+}
+
+.form,
+.greeting {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

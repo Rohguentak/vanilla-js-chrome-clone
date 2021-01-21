@@ -3,6 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 li button {

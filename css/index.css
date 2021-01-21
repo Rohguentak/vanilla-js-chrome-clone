@@ -1,6 +1,8 @@
 @import "component/form.css";
 @import "list.css";
 body {
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -19,16 +21,39 @@ body {
   display: block;
 }
 .js-title {
-  font-size: 48px;
+  font-size: 100px;
+  color: white;
 }
 .say-hello {
   padding: 10px 5px;
   font-size: 32px;
   font-weight: bold;
+  color: white;
 }
 
 .ask-todo-list,
 .js-greeting {
-  font-size: 32px;
+  font-size: 48px;
+  font-weight: bold;
   margin-top: 0px;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.backgroundimage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  animation: fadeIn 1.5s ease-in-out;
 }

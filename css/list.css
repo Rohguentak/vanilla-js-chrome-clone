@@ -1,0 +1,17 @@
+.js-todoList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li button {
+  color: tomato;
+  margin-left: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+li button:hover {
+  color: white;
+  background-color: coral;
+}

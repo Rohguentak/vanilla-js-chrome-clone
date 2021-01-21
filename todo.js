@@ -3,10 +3,24 @@ const todoInput = todoForm.querySelector("input");
 const todoList = document.querySelector(".js-todoList");
 
 const TODO_LS = "todo";
-const todos = [];
+let todos = [];
 
 function savetodos() {
   localStorage.setItem(TODO_LS, JSON.stringify(todos));
+}
+
+function deleteTodos(event) {
+  const btn = event.target;
+  const li = btn.parentNode;
+  todoList.removeChild(li);
+
+  const cleanTodos = todos.filter(function (todos) {
+    return todos.id !== parseInt(li.id);
+  });
+  //console.log(cleanTodos);
+  todos = cleanTodos;
+  savetodos();
+  console.log(todos);
 }
 
 function paintTodo(text) {
@@ -16,6 +30,8 @@ function paintTodo(text) {
   const newId = todos.length + 1;
 
   delbtn.innerText = "X";
+  delbtn.addEventListener("click", deleteTodos);
+
   span.innerText = text;
   li.appendChild(span);
   li.appendChild(delbtn);
@@ -29,12 +45,13 @@ function paintTodo(text) {
   savetodos();
 }
 
-function handleTodosubmit() {
+function handleTodosubmit(event) {
   event.preventDefault();
   const val = todoInput.value;
   paintTodo(val);
   todoInput.value = "";
 }
+
 function loadTodo() {
   const loadedtodo = localStorage.getItem(TODO_LS);
   if (loadedtodo !== null) {

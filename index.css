@@ -1,22 +1,41 @@
-.js-clock {
+body {
+  height: 100vh;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.js-title {
-  font-size: 100;
-}
-
 .form,
-.greeting {
+.greeting,
+.say-hello {
   display: none;
 }
 
 .showing {
   display: block;
 }
-.column {
+.js-title {
+  font-size: 48px;
+}
+.say-hello {
+  padding: 10px 5px;
+  font-size: 32px;
+  font-weight: bold;
+}
+.js-form {
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 5px 5px;
+  border-bottom: 2px solid black;
+}
+.js-form input {
+  font-size: 24px;
+  width: 400px;
+  border: none;
+  text-align: center;
+}
+
+.js-form input:focus {
+  outline: none;
 }

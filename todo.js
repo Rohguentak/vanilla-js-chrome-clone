@@ -56,8 +56,8 @@ function loadTodo() {
   const loadedtodo = localStorage.getItem(TODO_LS);
   if (loadedtodo !== null) {
     const parsedTodos = JSON.parse(loadedtodo);
-    parsedTodos.forEach(function (temp) {
-      paintTodo(temp.todotext);
+    parsedTodos.forEach(function (tempObjInParsedTodos) {
+      paintTodo(tempObjInParsedTodos.todotext);
     });
   }
 }

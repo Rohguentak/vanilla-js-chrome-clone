@@ -10,7 +10,18 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.geo-info {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 20px;
+  font-weight: bold;
+}
 .greeting,
 .say-hello,
 .ask-todo-list {

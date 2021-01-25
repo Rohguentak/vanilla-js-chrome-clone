@@ -1,4 +1,15 @@
 const COORDS = "coordsinfo";
+const API_KEY = "9753ebb1bec25f2f42c01f9c94fe6c2e";
+const geo_info = document.querySelector(".geo-info");
+
+function paintCoords(parsedCoords) {
+  const spanForLat = document.createElement("span");
+  const spanForLong = document.createElement("span");
+  spanForLat.innerText = `latitude: ${parsedCoords.latitude}`;
+  spanForLong.innerText = `longitude: ${parsedCoords.longitude}`;
+  geo_info.appendChild(spanForLat);
+  geo_info.appendChild(spanForLong);
+}
 
 function saveCoords(coordsObj) {
   localStorage.setItem(COORDS, JSON.stringify(coordsObj));
@@ -26,6 +37,8 @@ function loadCoords() {
   if (loadedCords === null) {
     askForCoords();
   } else {
+    const parsedCoords = JSON.parse(loadedCords);
+    paintCoords(parsedCoords);
   }
 }
 

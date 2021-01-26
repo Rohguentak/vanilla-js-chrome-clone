@@ -1,0 +1,12 @@
+.wheather-info {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 18px;
+  font-weight: bold;
+}

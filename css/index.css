@@ -1,5 +1,17 @@
 @import "component/form.css";
-@import "list.css";
+@import "component/list.css";
+@import "component/cel-icon.css";
+@import "component/weather_info.css";
+@import "component/background_image.css";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   background-color: rgba(0, 0, 0, 0.8);
   margin: 0;
@@ -9,19 +21,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 3s linear;
 }
-.geo-info {
-  position: absolute;
-  top: 0;
-  left: 5px;
-  display: flex;
-  color: white;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 20px;
-  font-weight: bold;
-}
+
 .greeting,
 .say-hello,
 .ask-todo-list {
@@ -34,6 +36,7 @@ body {
 .js-title {
   font-size: 100px;
   color: white;
+  animation: fadeIn 3s linear;
 }
 .say-hello {
   padding: 10px 5px;
@@ -49,22 +52,10 @@ body {
   margin-top: 0px;
   color: white;
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.column {
+  animation: fadeIn 3.5s linear;
 }
-.backgroundimage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  animation: fadeIn 1.5s ease-in-out;
+.image_link {
+  font-size: 3px;
+  color: white;
 }

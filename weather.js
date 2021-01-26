@@ -4,7 +4,7 @@ const wheather_info = document.querySelector(".wheather-info");
 
 function getWeather(lat, long) {
   fetch(
-    `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}&units=metric`
   )
     .then(function (wheatherdata) {
       return wheatherdata.json();

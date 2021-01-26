@@ -2,6 +2,17 @@ const COORDS = "coordsinfo";
 const API_KEY = "9753ebb1bec25f2f42c01f9c94fe6c2e";
 const geo_info = document.querySelector(".geo-info");
 
+function getWeather(lat, long) {
+  fetch(
+    `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}&units=metric`
+  )
+    .then(function (wheatherdata) {
+      return wheatherdata.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
+}
 function paintCoords(parsedCoords) {
   const spanForLat = document.createElement("span");
   const spanForLong = document.createElement("span");
@@ -22,6 +33,7 @@ function handleGeoSuccess(position) {
     longitude: long,
   };
   saveCoords(coordsObj);
+  getWeather(lat, long);
 }
 
 function handleGeoerror(position) {
@@ -39,6 +51,7 @@ function loadCoords() {
   } else {
     const parsedCoords = JSON.parse(loadedCords);
     paintCoords(parsedCoords);
+    getWeather(parsedCoords.latitude, parsedCoords.longitude);
   }
 }
 
